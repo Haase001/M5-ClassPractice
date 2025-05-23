@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Café</title>
+    <link rel="stylesheet" href="./Practica1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/f50bcbfe34.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav left-nav">
+                <li class="nav-item">
+                    <img src="https://i.imgur.com/zn5ac1Y.png" alt="Coffe logo" referrerpolicy="no-referrer">
+                </li>
+                <li class="nav-item nav-item-left menu">
+                    <button type="button" class="btn" id="./Practica1">Menu</button>
+                </li>
+                <li class="nav-item nav-item-left home">
+                    <button type="button" class="btn" id="../index">
+                        <i class="fa-solid fa-house"></i>
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav right-nav nav-item-right">
+                <li class="nav-item">
+                    <button type="button" class="no-background nav-button no-border">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Localizar Tienda
+                    </button>
+                </li>
+                <li class="nav-item nav-item-right">
+                    <button type="button" class="no-background nav-button">
+                        Ingresar
+                    </button>
+                </li>
+                <li class="nav-item nav-item-right">
+                    <button type="button" class="nav-button  black-navitem">
+                        Únete
+                    </button>
+                </li>
+            </ul>
+            <ul class="nav narrow-screen">
+                <li class="nav-item">
+                <button type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="menu-display">
+    <div class="menu-position">
+
+        <form class="menu-section pedidos">
+            <input type="text" name="Nombre" id="Order-name" placeholder="Nombre de la orden" required>
+            <button type="submit" id="OrderBtn">Hacer Pedido</button>
+        </form>
+        <div class="menu-section menu-header">
+            <p>
+                ¡Disfrútalos!
+            </p>
+            <h2>Conoce nuestras bebidas y alimentos de temporada</h2>
+        </div>
+        <div class="menu-section menu-item">
+            <div class="menu-title">
+                <h3>
+                    Bebidas
+                </h3>
+            </div>
+            <div class="menu-options" id="fivetosix-options">
+                <div class="option-item">
+                    <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FFlat%20White%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
+                    alt="Hot Brew">
+                    <h3>
+                        Café Caliente
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMocha%20Frapp%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
+                    alt="Mocha Frappuccino">
+                    <h3>
+                        Frappuccino
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FIced%20Caramel%20Macchiato%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
+                    alt="Cold Brew">
+                    <h3>
+                        Café frío
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2Fmatcha-green-tea-latte_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
+                    alt="Macha Green Tea Latte">
+                    <h3>
+                        Té Matcha
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FCold%20Brew%20Vainilla%20Sweet%20Cream%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
+                    alt="Sweet Vainilla Cold Brew">
+                    <h3>
+                        Café Vainilla
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="menu-section menu-item">
+            <div class="menu-title">
+                <h3>
+                    Alimentos
+                </h3>
+            </div>
+            <div class="menu-options">
+                <div class="option-item">
+                    <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FSandwich%20Pavo%20Panela_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
+                    alt="Turkey Sandwich">
+                    <h3>
+                        Sandwich
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://imgur.com/ygfYkOM.png" 
+                    alt="Turkey Baguette" referrerpolicy="no-referrer">
+                    <h3>
+                        Baguette
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://imgur.com/lIWYski.png" 
+                    alt="Turkey Sandwich" referrerpolicy="no-referrer">
+                    <h3>
+                        Hot Cakes
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="menu-section menu-item">
+            <div class="menu-title">
+                <h3>
+                    Postres
+                </h3>
+            </div>
+            <div class="menu-options">
+                <div class="option-item">
+                    <img src="https://imgur.com/Ih0CEex.png" 
+                    alt="Crepas" referrerpolicy="no-referrer">
+                    <h3>
+                        Crepa
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://imgur.com/aaLf6P3.png" 
+                    alt="Waffle con Helado" referrerpolicy="no-referrer">
+                    <h3>
+                        Waffle con Helado
+                    </h3>
+                </div>
+                <div class="option-item">
+                    <img src="https://imgur.com/kG7pXW1.png" 
+                    alt="Brownie" referrerpolicy="no-referrer">
+                    <h3>
+                        Brownie
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Order-container">
+        <section id="events-container">
+            <div class="order-item">
+                <h3 class="order-tittle">
+                    Pedido agregado
+                </h3>
+                <section class="event-area">
+
+                </section>
+            </div>
+            <div class="order-item">
+                <h3 class="order-tittle">
+                    En preparación
+                </h3>
+                <section class="event-area">
+
+                </section>
+            </div>
+            <div class="order-item">
+                <h3 class="order-tittle">
+                    Pedido listo
+                </h3>
+                <section class="event-area">
+
+                </section>
+            </div>
+        </section>
+    </div>
+    </main>
+    <footer class="info-footer">
+        <div class="footer-item top-footer">
+            <ul class="ul">
+                <li class="info-list list-title">
+                    <h3>Sobre Nosotros</h3>
+                    <i class="fa-solid fa-angle-down"></i>
+                </li>
+                <li class="info-list">
+                    <a href="#">
+                        Trabaja con nosotros
+                    </a>
+                </li>
+                <li class="info-list">
+                    <a href="#">
+                        Historias Cafés
+                    </a>
+                </li>
+            </ul>
+            <ul class="ul">
+                <li class="info-list list-title">
+                    <h3>Atención al cliente</h3>
+                    <i class="fa-solid fa-angle-down"></i>
+                </li>
+                <li class="info-list">
+                    <a href="#">
+                        Contáctanos
+                    </a>
+                </li>
+                <li class="info-list">
+                    <a href="#">
+                        Facturas electrónicas
+                    </a>
+                </li>
+                <li class="info-list">
+                    <a href="#">
+                        Formas de comprar
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-item lower-footer">
+            <ul class="lower-footer-item brand-icons">
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="lower-footer-item legal">
+                <li>
+                    <a href="#">
+                        Accesibilidad Web
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Aviso de Privacidad
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Boletines
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Condiciones de Uso
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Mapa del Sitio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Preferencias sobre Cookies
+                    </a>
+                </li>
+            </ul>
+            <span>Ⓒ 2025. Cafetería Café Company. Reservados todos los derechos
+            </span>
+        </div>
+    </footer>
+    <script src="./Practica1.js"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Obtener todos los botones de prácticas
-    const practiceButtons = document.querySelectorAll('.practice-btn');
+    const Buttons = document.querySelectorAll('.btn');
     
     // Añadir evento click a cada botón
-    practiceButtons.forEach(button => {
+    Buttons.forEach(button => {
         button.addEventListener('click', function() {
             const folderName = this.getAttribute('data-folder');
             const HTMLname = this.getAttribute('id')
