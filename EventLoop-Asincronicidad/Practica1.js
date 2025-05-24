@@ -108,17 +108,17 @@ function getTime (Name, list) {
     return new Promise((resolve, reject) => {
         //Creamos una tabla que nos indicara los tiempos de preparacion en segundos
         const timeChart = [
-            {name: 'Café caliente', time: 5 },
-            {name: 'Mocha Frappuccino', time: 5 },
-            {name: 'Café frío', time: 5 },
-            {name: 'Matcha Latte', time: 5 },
-            {name: 'Café Vainilla', time: 5 },
+            {name: 'Café Caliente', time: 2 },
+            {name: 'Mocha Frappuccino', time: 3 },
+            {name: 'Café frío', time: 2 },
+            {name: 'Matcha Latte', time: 2 },
+            {name: 'Café Vainilla', time: 3 },
             {name: 'Sandwich de Pavo', time: 5 },
             {name: 'Baguette de pavo', time: 5 },
-            {name: 'Hot cakes', time: 5 },
-            {name: 'Crepas', time: 5 },
-            {name: 'Waffle con Helado', time: 5 },
-            {name: 'Brownie', time: 5 }
+            {name: 'Hot cakes', time: 4 },
+            {name: 'Crepas', time: 4 },
+            {name: 'Waffle con Helado', time: 3 },
+            {name: 'Brownie', time: 1 }
         ];
 
         //variable para controlar la suma
@@ -134,7 +134,6 @@ function getTime (Name, list) {
                 totalTime += element.quantity*existingItem.time;
             } else {
                 reject (`Hubo un problema con la orden de ${Name}`);
-            
             };
         })
         setTimeout(() => {
@@ -163,7 +162,7 @@ async function makingOrder (Name, list) {
 
         //Creamos La seccion con el tiempo que tardará la orden
         const orderTime = document.createElement('span');
-        orderTime.innerHTML = time;
+        orderTime.innerHTML = `${time}min`;
         line.appendChild(orderTime);
 
         //Insertamos todo esto en el área de progreso
@@ -186,6 +185,9 @@ async function sendOrder (Name, list) {
     try {
         newOrder.reset();
         orderDisplay.innerHTML = '';
+        orderList = [];
+        console.log(list);
+        
         //Creamos un elemento para poner el status
         const line = document.createElement('div');
         line.classList.add('selected-items');
@@ -210,6 +212,7 @@ async function sendOrder (Name, list) {
         
         //Ya que tengamos una respuesta cambiamos el status
         status.innerHTML = `${resultado} <i class="fa-solid fa-user-check"></i>`
+
         //Dejamos pasar unos segundos y quitamos las lineas creadas
         setTimeout(() => {
             console.log(resultado);
@@ -233,10 +236,9 @@ newOrder.addEventListener('submit', (evento) =>{
     if (client === '') {
         alert('Es necesario escribir su nombre para el pedido')
     } else if (orderList.length === 0) {
-        alert('Es necesario Agregar algún platillo a tu orden')
+        alert('Es necesario agregar algún platillo a tu orden')
     }
 
-    console.log(`La orden de ${client} está en proceso`);
     //LLamamos a la funcion que mandará nuestra orden a preparar
     sendOrder(client, orderList);
 });
