@@ -58,7 +58,7 @@
     <main class="menu-display">
     <div class="menu-position">
 
-        <form class="menu-section pedidos">
+        <form class="menu-section pedidos" id="form">
             <input type="text" name="Nombre" id="Order-name" placeholder="Nombre de la orden" required>
             <button type="submit" id="OrderBtn">Hacer Pedido</button>
         </form>
@@ -77,35 +77,35 @@
             <div class="menu-options" id="fivetosix-options">
                 <div class="option-item">
                     <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FFlat%20White%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop"
-                    alt="Hot Brew">
+                    alt="Café Caliente" class="option-img">
                     <h3>
                         Café Caliente
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FMocha%20Frapp%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
-                    alt="Mocha Frappuccino">
+                    alt="Mocha Frappuccino" class="option-img">
                     <h3>
                         Frappuccino
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FIced%20Caramel%20Macchiato%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
-                    alt="Cold Brew">
+                    alt="Café frío" class="option-img">
                     <h3>
                         Café frío
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2Fmatcha-green-tea-latte_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
-                    alt="Macha Green Tea Latte">
+                    alt="Matcha Latte" class="option-img">
                     <h3>
                         Té Matcha
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-03%2FCold%20Brew%20Vainilla%20Sweet%20Cream%20425x425%20sin%20fondo.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
-                    alt="Sweet Vainilla Cold Brew">
+                    alt="Café Vainilla" class="option-img">
                     <h3>
                         Café Vainilla
                     </h3>
@@ -121,21 +121,21 @@
             <div class="menu-options">
                 <div class="option-item">
                     <img src="https://djftrby1k8irl.cloudfront.net/s3fs-public/2022-02%2FSandwich%20Pavo%20Panela_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop" 
-                    alt="Turkey Sandwich">
+                    alt="Sandwich de Pavo" class="option-img">
                     <h3>
                         Sandwich
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://imgur.com/ygfYkOM.png" 
-                    alt="Turkey Baguette" referrerpolicy="no-referrer">
+                    alt="Baguette de pavo" referrerpolicy="no-referrer" class="option-img">
                     <h3>
                         Baguette
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://imgur.com/lIWYski.png" 
-                    alt="Turkey Sandwich" referrerpolicy="no-referrer">
+                    alt="Hot cakes" referrerpolicy="no-referrer" class="option-img">
                     <h3>
                         Hot Cakes
                     </h3>
@@ -151,21 +151,22 @@
             <div class="menu-options">
                 <div class="option-item">
                     <img src="https://imgur.com/Ih0CEex.png" 
-                    alt="Crepas" referrerpolicy="no-referrer">
+                    alt="Crepas" referrerpolicy="no-referrer" class="option-img">
                     <h3>
                         Crepa
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://imgur.com/aaLf6P3.png" 
-                    alt="Waffle con Helado" referrerpolicy="no-referrer">
+                    alt="Waffle con Helado" referrerpolicy="no-referrer"
+                    class="option-img">
                     <h3>
                         Waffle con Helado
                     </h3>
                 </div>
                 <div class="option-item">
                     <img src="https://imgur.com/kG7pXW1.png" 
-                    alt="Brownie" referrerpolicy="no-referrer">
+                    alt="Brownie" referrerpolicy="no-referrer" class="option-img">
                     <h3>
                         Brownie
                     </h3>
@@ -179,20 +180,26 @@
                 <h3 class="order-tittle">
                     Pedido agregado
                 </h3>
-                <section class="event-area">
-
+                <section class="event-area" id="pre-Order">
+                    <!-- Ejemplo de como quedaría la lista
+                    <div class="selected-items">
+                        <span class="numberOfItems">2</span>
+                        <span class="itemsName">Café Caliente</span>
+                        <button type="button" class="delete-item"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                    -->
                 </section>
             </div>
             <div class="order-item">
                 <h3 class="order-tittle">
                     En preparación
                 </h3>
-                <section class="event-area">
-
+                <section class="event-area" id="in-Progress">
+                    
                 </section>
             </div>
             <div class="order-item">
-                <h3 class="order-tittle">
+                <h3 class="order-tittle" id="order-Ready">
                     Pedido listo
                 </h3>
                 <section class="event-area">
