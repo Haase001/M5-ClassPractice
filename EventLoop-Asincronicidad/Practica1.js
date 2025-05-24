@@ -35,7 +35,7 @@ function deleteItem (deleteBtn, itemName) {
         //Caso contrario, eliminamos el elemento por completo
             orderList = orderList.filter((i) => i.name !== itemName )
         }
-        
+
         console.log(orderList);
         UpdateOrder(orderList);
     });
@@ -103,6 +103,125 @@ orderItems.forEach( item =>{
     })
 });
 
+//Creamos una funcion para sacar el tiempo que tardará la orden
+function getTime (Name, list) {
+    return new Promise((resolve, reject) => {
+        //Creamos una tabla que nos indicara los tiempos de preparacion en segundos
+        const timeChart = [
+            {name: 'Café caliente', time: 5 },
+            {name: 'Mocha Frappuccino', time: 5 },
+            {name: 'Café frío', time: 5 },
+            {name: 'Matcha Latte', time: 5 },
+            {name: 'Café Vainilla', time: 5 },
+            {name: 'Sandwich de Pavo', time: 5 },
+            {name: 'Baguette de pavo', time: 5 },
+            {name: 'Hot cakes', time: 5 },
+            {name: 'Crepas', time: 5 },
+            {name: 'Waffle con Helado', time: 5 },
+            {name: 'Brownie', time: 5 }
+        ];
+
+        //variable para controlar la suma
+        let totalTime = 0;
+
+        //Calculamos el tiempo que tardará la orden
+        //Por cada elemento en la lista, buscamos un elemento en la tabla de tiempos
+        list.forEach( element => {
+            const existingItem = timeChart.find(item => item.name === element.name);
+    
+            if (existingItem) {
+                // Si existe, incrementa la cantidad
+                totalTime += element.quantity*existingItem.time;
+            } else {
+                reject (`Hubo un problema con la orden de ${Name}`);
+            
+            };
+        })
+        setTimeout(() => {
+            resolve (totalTime)
+        }, 5000);
+        
+    })
+}
+
+async function makingOrder (Name, list) {
+    try {
+        //Creamos una variable para sumar el tiempo
+        const time = await getTime(Name, list);
+        console.log(time);
+        
+        //Creamos un nuevo elemento
+        const line = document.createElement('div');
+        line.classList.add('selected-items');
+        line.setAttribute('id', Name)
+
+        //Creamos la seccion del nombre del elemento
+        const name = document.createElement('span');
+        name.classList.add('itemsName');
+        name.innerHTML = Name;
+        line.appendChild(name);
+
+        //Creamos La seccion con el tiempo que tardará la orden
+        const orderTime = document.createElement('span');
+        orderTime.innerHTML = time;
+        line.appendChild(orderTime);
+
+        //Insertamos todo esto en el área de progreso
+        inProgress.appendChild(line);
+
+        return new Promise((resolve, reject) => {
+            //Esperamos el tiempo indicado y mandamos el resultado
+            setTimeout(() => {
+                resolve ('Orden lista')
+            }, time*1000);
+        })
+    } catch (error) {
+        console.log(`Hubo un error creando su orden ${error}`);
+        
+    }
+}
+
+//Funcion para enviar la orden
+async function sendOrder (Name, list) {
+    try {
+        newOrder.reset();
+        orderDisplay.innerHTML = '';
+        //Creamos un elemento para poner el status
+        const line = document.createElement('div');
+        line.classList.add('selected-items');
+
+        //Creamos la seccion del nombre del elemento
+        const name = document.createElement('span');
+        name.classList.add('itemsName');
+        name.innerHTML = Name;
+        line.appendChild(name);
+
+        //Creamos la seccion donde estará el status
+        const status = document.createElement('span');
+        status.classList.add('status')
+        status.innerHTML = `En progreso <i class="fa-solid fa-user-clock"></i>`
+        line.appendChild(status);
+
+        //Metemos esto en el DOM
+        orderReady.appendChild(line);
+
+        //Esperamos a la funcion makingOrder
+        const resultado = await makingOrder(Name, list);
+        
+        //Ya que tengamos una respuesta cambiamos el status
+        status.innerHTML = `${resultado} <i class="fa-solid fa-user-check"></i>`
+        //Dejamos pasar unos segundos y quitamos las lineas creadas
+        setTimeout(() => {
+            console.log(resultado);
+            line.remove();
+            const removal = document.getElementById(Name)
+            removal.remove()
+        }, 20000)
+    } catch (error) {
+        inProgress.innerHTML = `Lo sentimos, tu orden no puede ser procesada ${error}`
+    }
+}
+
 //Obtenemos datos del formulario
 newOrder.addEventListener('submit', (evento) =>{
     //Evitamos que resetee la página
@@ -113,8 +232,11 @@ newOrder.addEventListener('submit', (evento) =>{
     //Validamos que haya un nombre en el pedido
     if (client === '') {
         alert('Es necesario escribir su nombre para el pedido')
-    };
+    } else if (orderList.length === 0) {
+        alert('Es necesario Agregar algún platillo a tu orden')
+    }
 
     console.log(`La orden de ${client} está en proceso`);
-    
+    //LLamamos a la funcion que mandará nuestra orden a preparar
+    sendOrder(client, orderList);
 });

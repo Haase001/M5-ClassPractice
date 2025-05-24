@@ -286,6 +286,14 @@ body{
     cursor: pointer;
 }
 
+#events-container .order-item .event-area .event-area-head{
+    border-bottom: solid 2px black;
+}
+
+#events-container .order-item .event-area .status{
+    max-width: 40%;
+}
+
 /*Diseño de footer */
 
 .info-footer {
