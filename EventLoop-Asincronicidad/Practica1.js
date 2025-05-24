@@ -237,8 +237,8 @@ newOrder.addEventListener('submit', (evento) =>{
         alert('Es necesario escribir su nombre para el pedido')
     } else if (orderList.length === 0) {
         alert('Es necesario agregar algún platillo a tu orden')
+    } else {
+        //LLamamos a la funcion que mandará nuestra orden a preparar
+        sendOrder(client, orderList);
     }
-
-    //LLamamos a la funcion que mandará nuestra orden a preparar
-    sendOrder(client, orderList);
 });
