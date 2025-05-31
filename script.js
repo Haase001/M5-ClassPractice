@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const folderName = this.getAttribute('data-folder');
             const HTMLname = this.getAttribute('id')
-            console.log(folderName);
             
             if (folderName) {
                 // Navegar a la práctica correspondiente
