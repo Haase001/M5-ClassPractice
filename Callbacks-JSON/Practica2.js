@@ -1,3 +1,15 @@
+//Boton de inicio
+const homeBtn = document.getElementById('../index');
+
+//Volver al inicio
+homeBtn.addEventListener('click', function() {
+    const HTMLname = this.getAttribute('id');
+        if (HTMLname) {
+            // Navegar a la práctica correspondiente
+            window.location.href = `${HTMLname}.html`;
+        }
+});
+
 // Datos iniciales de libros en formato JSON
 let biblioteca = '{"libros": [{"titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "genero": "Realismo mágico", "disponible": true}, {"titulo": "1984", "autor": "George Orwell", "genero": "Distopía", "disponible": true}]}';
 

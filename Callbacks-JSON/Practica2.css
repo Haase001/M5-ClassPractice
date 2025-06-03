@@ -17,7 +17,7 @@ header{
     grid-area: 1 / 1 / 2 / 5;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 section{
