@@ -11,7 +11,7 @@ homeBtn.addEventListener('click', function() {
 });
 
 // Datos iniciales de libros en formato JSON
-let biblioteca = '{"libros": [{"titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "genero": "Realismo mágico", "disponible": true}, {"titulo": "1984", "autor": "George Orwell", "genero": "Distopía", "disponible": true}]}';
+let biblioteca = '{"libros": [{"titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "genero": "Realismo mágico", "disponible": true}, {"titulo": "1984", "autor": "George Orwell", "genero": "Distopía", "disponible": true}, {"titulo": "Don Quijote de la Mancha", "autor": "Miguel de Cervantes", "genero": "Novela clásica", "disponible": true}, {"titulo": "Orgullo y prejuicio", "autor": "Jane Austen", "genero": "Romance clásico", "disponible": false}, {"titulo": "Crónica de una muerte anunciada", "autor": "Gabriel García Márquez", "genero": "Novela", "disponible": true}, {"titulo": "El señor de los anillos", "autor": "J.R.R. Tolkien", "genero": "Fantasía épica", "disponible": false}, {"titulo": "Harry Potter y la piedra filosofal", "autor": "J.K. Rowling", "genero": "Fantasía juvenil", "disponible": true}, {"titulo": "Rayuela", "autor": "Julio Cortázar", "genero": "Novela experimental", "disponible": true}, {"titulo": "Ficciones", "autor": "Jorge Luis Borges", "genero": "Cuentos filosóficos", "disponible": true}, {"titulo": "La sombra del viento", "autor": "Carlos Ruiz Zafón", "genero": "Misterio histórico", "disponible": false}]}';
 
 //Elementos del DOM
 const showBtn = document.getElementById('show-books');
