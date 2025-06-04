@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+        background-color: #40B5CB;
+}
+
+header{
+    background: #2A7B9B;
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(73, 93, 135, 1) 50%, rgba(73, 55, 110, 1) 100%);
+    display: flex;
+    align-items: center;
+    padding: 2% 1%;
+    position: sticky;
+    top: 0;
+}
+
+header h1{
+    width: 80%;
+    text-align: center;
+    font-family: "Radley", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+#buttons-container{
+    grid-area: 1 / 1 / 2 / 3;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#section-fetch{
+    grid-area: 2 / 1 / 6 / 2;
+}
+
+#section-axios{
+    grid-area: 2 / 2 / 6 / 3;
+}
+
+.seccions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccions h2{
+    color: white;
+}
+
+.characters-container{
+    background-color: whitesmoke;
+    border: solid 1px rgb(189, 220, 64);
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 5px rgba(189,220,64,1);
+    margin-top: 2rem;
+    width: 90%;
+    min-height: 300px;
+}
